@@ -3,6 +3,7 @@ var _ = require('underscore');
 var lamp = new (require('delcom-indicator'))();
 
 var currentStatus = '';
+var lastLampCommand = '';
 var currentStatusCount = 0;
 var jenkinsStatusUrl = 'http://localhost:9000/api/json?tree=jobs[name,color]';
 var monitoredJobNames = [
@@ -13,8 +14,9 @@ var monitoredJobNames = [
 ];
 
 var setLampTo = function(command) {
-  if (lamp.isConnected()) { 
-    lamp[command](); 
+  if (lamp.isConnected() && lastLampCommand !== command) { 
+    lamp[command]();
+    lastLampCommand = command;
   }
 }
 
