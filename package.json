@@ -1,0 +1,13 @@
+{
+  "description": "Continuousely poll jenkins and set a build light color",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/constantijn/buildlight-node"
+  },
+  "license": "MIT",
+  "dependencies": {
+  	"delcom-indicator": "0.1.9",
+    "request": "2.58.0",
+    "underscore": "1.8.3"
+  }
+}
