@@ -1,8 +1,8 @@
-# Buildlight for NodeJS
+# Buildlight using NodeJS
 
 Drives a buildlight by polling jenkins and turning the buildlight into the apropriate color
 
-First time optionally follow the Linux instructions and then `npm install` 
+First time follow the Linux instructions (if applicable) and then `npm install` 
 
 Run with `node check-build.js`
 
