@@ -16,6 +16,7 @@ var monitoredJobNames = [
 var setLampTo = function(command) {
   var lamp = new Lamp();
   if (lamp.isConnected() && lastLampCommand !== command) { 
+    lamp.turnOff();
     lamp[command]();
     lastLampCommand = command;
   }
