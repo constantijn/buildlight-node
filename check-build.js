@@ -1,6 +1,6 @@
 var request = require('request');
 var _ = require('underscore');
-var lamp = new (require('delcom-indicator'))();
+var Lamp = require('delcom-indicator');
 
 var currentStatus = '';
 var lastLampCommand = '';
@@ -14,10 +14,12 @@ var monitoredJobNames = [
 ];
 
 var setLampTo = function(command) {
+  var lamp = new Lamp();
   if (lamp.isConnected() && lastLampCommand !== command) { 
     lamp[command]();
     lastLampCommand = command;
   }
+  lamp.close();
 }
 
 var reportOk = function() {
@@ -89,6 +91,9 @@ var pollJenkins = function() {
   });
 }
 
-console.log('Physical lamp connected? ' + lamp.isConnected())
+var lampCheck = new Lamp();
+console.log('Physical lamp connected? ' + lamp.isConnected());
+lampCheck.close();
+
 pollJenkins();
 
