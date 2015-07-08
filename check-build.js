@@ -93,7 +93,7 @@ var pollJenkins = function() {
 }
 
 var lampCheck = new Lamp();
-console.log('Physical lamp connected? ' + lamp.isConnected());
+console.log('Physical lamp connected? ' + lampCheck.isConnected());
 lampCheck.close();
 
 pollJenkins();
