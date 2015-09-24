@@ -10,6 +10,9 @@ var monitoredJobNames = [
   'dhl-parcel-api',
   'dhl-parcel-site', 
   'dhl-parcel-business-site', 
+  'dhl-parcel-admin-site', 
+  'dhl-parcel-admin-api', 
+  'dhl-parcel-e2e-c2c', 
   'dhl-parcel-pds-api'
 ];
 
